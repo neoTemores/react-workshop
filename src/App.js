@@ -1,25 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+
+  // 1. Use componentDidMount to make an api call to https://jsonplaceholder.typicode.com/todos/
+  // 2. The app should show all todos in a list.
+  // 3. Show a loading component while making api calls
+  // 4. Show a single todo when it is clicked on.
+
+  render() {
+    return (
+      <div className="App">
+        <h1>Initial app component</h1>  
+      </div>
+    );
+  }
 }
 
 export default App;
