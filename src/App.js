@@ -1,4 +1,6 @@
 import React from 'react'
+import Loading from './components/Loading'
+import Todos from './components/Todos'
 
 class App extends React.Component {
 
@@ -35,12 +37,39 @@ class App extends React.Component {
 
   // Conditionaly render Todos -> TodoItem or singleTodo
 
+  constructor(props) {
+    super(props)
+    this.state = {
+      todos: null,
+      singleTodo: null,
+      loading: true,
+      loadingMessage: 'App is loading...'
+    }
+  }
+
+  componentDidMount() {
+    fetch('https://jsonplaceholder.typicode.com/todos/')
+    .then((response) => response.json())
+    .then((data) => this.setState({todos: data, loading: false}))
+  }
+
   render() {
+
+    const setSingleTodo = (e) => {
+      fetch(`https://jsonplaceholder.typicode.com/todos/${e.target.id}`)
+      .then((response) => response.json())
+      .then((data) => this.setState({singleTodo: data}))
+    }
+
+    if(this.state.loading) {
+      return (
+        <Loading loadingMessage={this.state.loadingMessage}/>
+      )
+    }
+    
     return (
-      <div className="App">
-        <h1>Initial app component</h1>  
-      </div>
-    );
+      <Todos todos={this.state.todos} setSingleTodo={setSingleTodo} />
+    )
   }
 }
 
