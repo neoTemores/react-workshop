@@ -20,8 +20,9 @@ body {
   margin: 30px auto;
   overflow: auto;
   height: fit-content;
-  border: 2px solid steelblue;
+  border: 3px solid steelblue;
   padding: 30px;
+  padding-top: 5px;
   border-radius: 5px;
 }
 
@@ -30,7 +31,50 @@ body {
   font-size: 3rem;
   margin-top: 0;
   font-family: cursive;
-  border-bottom: 2px solid red;
+  border-bottom: 3px solid red;
+
+}
+
+.addNewTaskButton {
+  color: white;
+  border-radius: 5px;
+  border: none;
+  width: 40%;
+  justify-self: center;
+  font-size: 1rem;
+  cursor: pointer;
+  font-family: fantasy;
+  padding-top: 5px;
+}
+
+.newTodoForm {
+  display: grid;
+  font-weight: bold;
+  font-family: cursive;
+  font-size: 1.5rem;
+  border: 5px solid steelblue;
+  padding: 15px;
+  margin-top: 10px;
+}
+
+.formLabel {
+  /* font-size: 2rem; */
+}
+
+.submitButton {
+  background-color: green;
+  color: white;
+  font-size: 1rem;
+  font-family: fantasy;
+  cursor: pointer;
+}
+
+.inputBox {
+  height: 2rem;
+  font-size: 1.5rem;
+  font-family: cursive;
+  border: 3px solid black;
+  margin-bottom: 5px;
 }
 
 .todoItem {
@@ -48,7 +92,7 @@ body {
 
 .deleteX {
   color: white;
-  background-color: rgb(235, 77, 77);
+  background-color: red;
   align-self: center;
   justify-self: right;
   font-size: 1rem;
@@ -71,11 +115,11 @@ body {
   height: 90%;
   width: 20%;
   justify-self: center;
-  background: lightblue;
+  background: skyblue;
   color: #fff;
   border: none;
   box-shadow: 3px 3px 3px black;
-  padding: 10px 20px;
+  padding: 5px 10px;
   margin: 5px;
   border-radius: 5px;
   cursor: pointer;

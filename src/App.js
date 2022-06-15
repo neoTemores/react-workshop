@@ -3,6 +3,7 @@ import Loading from './components/Loading'
 import Todos from './components/Todos'
 import SingleTodo from './components/SingleTodo'
 import Header from './components/Header.js'
+import NewTodoForm from './components/NewTodoForm'
 
 class App extends React.Component {
 
@@ -12,7 +13,8 @@ class App extends React.Component {
       todos: null,
       singleTodo: null,
       loading: true,
-      loadingMessage: 'App is loading...'
+      loadingMessage: 'App is loading...',
+      showAddNewTodoForm: false
     }
   }
 
@@ -50,10 +52,37 @@ class App extends React.Component {
       )
     }
 
+    const toggleShowAddNewTodoForm = () => {
+      this.setState({ showAddNewTodoForm: !this.state.showAddNewTodoForm })
+    }
+
+    const postNewTodo = (text) => {
+      fetch('https://jsonplaceholder.typicode.com/todos/', {
+        method: 'POST',
+        body: JSON.stringify({
+          'title': text
+        }),
+        headers: {
+          'Content-type': 'application/json'
+        }
+      })
+
+        .then((response) => response.json())
+        .then((data) => this.setState({
+          todos: [data, ...this.state.todos],
+          showAddNewTodoForm: false
+        }))
+
+
+    }
+
     return (
       <>
 
-        <Header currentState={this.state} />
+        <Header currentState={this.state}
+          toggleShowAddNewTodoForm={toggleShowAddNewTodoForm} />
+
+        {this.state.showAddNewTodoForm && <NewTodoForm postNewTodo={postNewTodo} />}
 
         {!this.state.singleTodo ?
           <Todos todos={this.state.todos} setSingleTodo={setSingleTodo} deleteTodo={deleteTodo} /> :
