@@ -6,7 +6,7 @@ class Button extends React.Component {
             this.props.goBackToHomePage()
         }
         return (
-            <button className="btn" onClick={handleGoBack}>Back</button>
+            <button className="btn" onClick={handleGoBack}>Back Home</button>
         )
     }
 }

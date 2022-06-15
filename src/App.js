@@ -27,9 +27,19 @@ class App extends React.Component {
   render() {
 
     const setSingleTodo = (e) => {
+
+      this.state.showAddNewTodoForm && toggleShowAddNewTodoForm()
+
+      if (e.target.id > 200) {
+        let newPost = this.state.todos.filter((todos) => todos.id === +e.target.id)
+        this.setState({ singleTodo: newPost[0] })
+        return
+      }
+
       fetch(`https://jsonplaceholder.typicode.com/todos/${e.target.id}`)
         .then((response) => response.json())
         .then((data) => this.setState({ singleTodo: data }))
+
     }
 
     const deleteTodo = (e) => {

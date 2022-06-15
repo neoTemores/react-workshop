@@ -32,7 +32,6 @@ body {
   margin-top: 0;
   font-family: cursive;
   border-bottom: 3px solid red;
-
 }
 
 .addNewTaskButton {
@@ -79,7 +78,7 @@ body {
 
 .todoItem {
   font-family: Arial, Helvetica, sans-serif;
-  border-bottom: 4px dotted lightblue;
+  border-bottom: 4px dotted steelblue;
   font-family: fantasy;
   font-size: 2rem;
   cursor: pointer;
@@ -111,11 +110,46 @@ body {
   grid-template-columns: auto auto;
 }
 
+.todoUserName {
+  font-size: 1rem;
+  color: navy;
+  background-color: #fff;
+  width: fit-content;
+}
+
+.userData {
+  border: 3px solid steelblue;
+  padding: 10px 10px;
+  padding-top: 0;
+  display: grid;
+  justify-self: center;
+  justify-items: left;
+  grid-template-columns: auto;
+  width: 60%;
+  font-size: 1.2rem;
+  font-family: fantasy;
+}
+
+.backToSingleTodoBtn {
+  width: 80%;
+  justify-self: center;
+  padding: 5px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  border: none;
+  background-color: steelblue;
+  color: white;
+  font-family: fantasy;
+  padding-top: 8px;
+  border-radius: 5px;
+  box-shadow: 3px 3px 3px black;
+}
+
 .btn {
   height: 90%;
-  width: 20%;
+  width: 30%;
   justify-self: center;
-  background: skyblue;
+  background: steelblue;
   color: #fff;
   border: none;
   box-shadow: 3px 3px 3px black;
