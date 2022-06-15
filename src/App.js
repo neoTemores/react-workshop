@@ -35,7 +35,8 @@ class App extends React.Component {
         { method: 'DELETE' })
 
       this.setState({
-        todos: this.state.todos.filter((todo) => todo.id != e.target.id)
+        todos: this.state.todos.filter((todo) => todo.id !== +e.target.id),
+        singleTodo: null
       })
     }
 
@@ -56,7 +57,7 @@ class App extends React.Component {
 
         {!this.state.singleTodo ?
           <Todos todos={this.state.todos} setSingleTodo={setSingleTodo} deleteTodo={deleteTodo} /> :
-          <SingleTodo singleTodo={this.state.singleTodo} goBackToHomePage={goBackToHomePage} />}
+          <SingleTodo singleTodo={this.state.singleTodo} goBackToHomePage={goBackToHomePage} deleteTodo={deleteTodo} />}
 
       </>
     )

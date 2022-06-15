@@ -38,24 +38,28 @@ body {
   border-bottom: 4px dotted lightblue;
   font-family: fantasy;
   font-size: 2rem;
+  cursor: pointer;
 
 }
 
 .todoItem:hover {
-  cursor: pointer;
   opacity: 50%;
 }
 
 .deleteX {
-  /* padding-top: 8%; */
-  color: red;
+  color: white;
+  background-color: rgb(235, 77, 77);
   align-self: center;
   justify-self: right;
-  font-size: 2rem;
-}
-
-.deleteX:hover {
+  font-size: 1rem;
+  padding: 4px 8px;
+  border-radius: 5px;
+  border: none;
   cursor: pointer;
+  font-family: fantasy;
+  box-shadow: 3px 3px 3px black;
+
+
 }
 
 .listItem {
@@ -65,7 +69,7 @@ body {
 
 .btn {
   height: 90%;
-  width: 50%;
+  width: 20%;
   justify-self: center;
   background: lightblue;
   color: #fff;
@@ -78,8 +82,4 @@ body {
   text-decoration: none;
   font-size: 1.5rem;
   font-family: cursive;
-}
-
-btn:hover {
-  opacity: 10%;
 }

@@ -6,7 +6,9 @@ export class DeleteButton extends Component {
             this.props.deleteTodo(e)
         }
         return (
+
             <button className='deleteX' id={this.props.id} onClick={handleDelete}>Delete</button>
+
         )
     }
 }
